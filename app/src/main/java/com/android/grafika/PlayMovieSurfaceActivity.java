@@ -82,7 +82,6 @@ public class PlayMovieSurfaceActivity extends Activity implements OnItemSelected
     /**
      * Overridable  method to get layout id.  Any provided layout needs to include
      * the same views (or compatible) as active_play_movie_surface
-     *
      */
     protected int getContentViewId() {
         return R.layout.activity_play_movie_surface;
@@ -167,7 +166,9 @@ public class PlayMovieSurfaceActivity extends Activity implements OnItemSelected
         Log.d(TAG, "onItemSelected: " + mSelectedMovie + " '" + mMovieFiles[mSelectedMovie] + "'");
     }
 
-    @Override public void onNothingSelected(AdapterView<?> parent) {}
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
 
     /**
      * onClick handler for "play"/"stop" button.
@@ -197,7 +198,7 @@ public class PlayMovieSurfaceActivity extends Activity implements OnItemSelected
 
             MoviePlayer player = null;
             try {
-                 player = new MoviePlayer(
+                player = new MoviePlayer(
                         new File(getFilesDir(), mMovieFiles[mSelectedMovie]), surface, callback);
             } catch (IOException ioe) {
                 Log.e(TAG, "Unable to play movie", ioe);

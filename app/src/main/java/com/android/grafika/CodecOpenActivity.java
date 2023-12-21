@@ -46,7 +46,7 @@ public class CodecOpenActivity extends Activity {
 
     /**
      * onClick handler for "start" button.
-     *
+     * <p>
      * We create as many codecs as we can and return without releasing them.  The codecs
      * will remain in use until the next GC.
      */

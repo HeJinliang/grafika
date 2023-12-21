@@ -36,7 +36,7 @@ import java.nio.ByteBuffer;
  * Generate a short movie using Surface input to MediaCodec, where the Surface is written to
  * from software (lock() + unlockAndPost() rather than GLES).  This is NOT A SUPPORTED USE
  * CASE, but as of API 19 the documentation says nothing to that effect.
- *
+ * <p>
  * See also https://code.google.com/p/android/issues/detail?id=61194
  */
 public class SoftInputSurfaceActivity extends Activity {
@@ -276,13 +276,13 @@ public class SoftInputSurfaceActivity extends Activity {
                 paint.setColor(color);
 
                 float sliceWidth = width / 8;
-                canvas.drawRect(sliceWidth * i, 0, sliceWidth * (i+1), height, paint);
+                canvas.drawRect(sliceWidth * i, 0, sliceWidth * (i + 1), height, paint);
             }
 
             paint.setColor(0x80808080);
             float sliceHeight = height / 8;
             int frameMod = frameNum % 8;
-            canvas.drawRect(0, sliceHeight * frameMod, width, sliceHeight * (frameMod+1), paint);
+            canvas.drawRect(0, sliceHeight * frameMod, width, sliceHeight * (frameMod + 1), paint);
         } finally {
             mInputSurface.unlockCanvasAndPost(canvas);
         }

@@ -143,7 +143,8 @@ public class MultiSurfaceActivity extends Activity implements SurfaceHolder.Call
         mBouncing = false;      // tell thread to stop
         try {
             mBounceThread.join();
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
         mBounceThread = null;
     }
 
@@ -209,10 +210,10 @@ public class MultiSurfaceActivity extends Activity implements SurfaceHolder.Call
                 // top layer: alpha stripes
                 if (portrait) {
                     int halfLine = width / 16 + 1;
-                    drawRectSurface(surface, width/2 - halfLine, 0, halfLine*2, height);
+                    drawRectSurface(surface, width / 2 - halfLine, 0, halfLine * 2, height);
                 } else {
                     int halfLine = height / 16 + 1;
-                    drawRectSurface(surface, 0, height/2 - halfLine, width, halfLine*2);
+                    drawRectSurface(surface, 0, height / 2 - halfLine, width, halfLine * 2);
                 }
                 break;
             default:

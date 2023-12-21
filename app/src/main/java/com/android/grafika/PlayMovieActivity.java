@@ -143,7 +143,9 @@ public class PlayMovieActivity extends Activity implements OnItemSelectedListene
         Log.d(TAG, "onItemSelected: " + mSelectedMovie + " '" + mMovieFiles[mSelectedMovie] + "'");
     }
 
-    @Override public void onNothingSelected(AdapterView<?> parent) {}
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
 
     /**
      * onClick handler for "play"/"stop" button.
@@ -171,7 +173,7 @@ public class PlayMovieActivity extends Activity implements OnItemSelectedListene
             Surface surface = new Surface(st);
             MoviePlayer player = null;
             try {
-                 player = new MoviePlayer(
+                player = new MoviePlayer(
                         new File(getFilesDir(), mMovieFiles[mSelectedMovie]), surface, callback);
             } catch (IOException ioe) {
                 Log.e(TAG, "Unable to play movie", ioe);

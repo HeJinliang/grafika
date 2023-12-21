@@ -77,12 +77,12 @@ public class ReadPixelsActivity extends Activity {
         builder.setCancelable(false);   // only by button
         builder.setNegativeButton(R.string.cancel,
                 new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                mIsCanceled = true;
-                // let the async task handle dismiss the dialog
-            }
-        });
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mIsCanceled = true;
+                        // let the async task handle dismiss the dialog
+                    }
+                });
         return builder.show();
 
     }
@@ -118,7 +118,7 @@ public class ReadPixelsActivity extends Activity {
          * Prepare for the glReadPixels test.
          */
         public ReadPixelsTask(AlertDialog dialog, int resultTextId,
-                int width, int height, int iterations) {
+                              int width, int height, int iterations) {
             mDialog = dialog;
             mResultTextId = resultTextId;
             mWidth = width;

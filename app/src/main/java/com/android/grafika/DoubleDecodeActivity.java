@@ -105,9 +105,9 @@ public class DoubleDecodeActivity extends Activity {
         /**
          * Constructs the VideoBlob.
          *
-         * @param view The TextureView object we want to draw into.
+         * @param view     The TextureView object we want to draw into.
          * @param movieTag Which movie to play.
-         * @param ordinal The blob's ordinal (only used for log messages).
+         * @param ordinal  The blob's ordinal (only used for log messages).
          */
         public VideoBlob(TextureView view, int movieTag, int ordinal) {
             LTAG = TAG + ordinal;

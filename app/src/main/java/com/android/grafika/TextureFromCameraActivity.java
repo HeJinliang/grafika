@@ -274,9 +274,13 @@ public class TextureFromCameraActivity extends Activity implements SurfaceHolder
     }
 
     @Override   // SeekBar.OnSeekBarChangeListener
-    public void onStartTrackingTouch(SeekBar seekBar) {}
+    public void onStartTrackingTouch(SeekBar seekBar) {
+    }
+
     @Override   // SeekBar.OnSeekBarChangeListener
-    public void onStopTrackingTouch(SeekBar seekBar) {}
+    public void onStopTrackingTouch(SeekBar seekBar) {
+    }
+
     @Override
 
     /**
@@ -846,7 +850,7 @@ public class TextureFromCameraActivity extends Activity implements SurfaceHolder
          * Call from UI thread.
          */
         public void sendSurfaceChanged(@SuppressWarnings("unused") int format, int width,
-                int height) {
+                                       int height) {
             // ignore format
             sendMessage(obtainMessage(MSG_SURFACE_CHANGED, width, height));
         }
@@ -965,7 +969,7 @@ public class TextureFromCameraActivity extends Activity implements SurfaceHolder
                 case MSG_REDRAW:
                     renderThread.draw();
                     break;
-               default:
+                default:
                     throw new RuntimeException("unknown message " + what);
             }
         }
